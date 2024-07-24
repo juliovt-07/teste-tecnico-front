@@ -1,10 +1,10 @@
 <script setup>
-import List from '@/components/List.vue'
+import VList from '@/components/VList.vue'
 import VCard from '@/components/VCard.vue'
 </script>
 
 <template>
   <VCard>
-    <List />
+    <VList />
   </VCard>
 </template>
