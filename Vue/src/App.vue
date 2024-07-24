@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import MobileMenu from '@/components/MobileMenu.vue'
 import SideBar from '@/components/SideBar.vue'
-import ModalUser from '@/components/ModalUser.vue';
+import ModalUser from '@/components/ModalUser.vue'
 
 const isSidebarVisible = ref(false)
 

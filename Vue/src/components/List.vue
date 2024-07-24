@@ -46,7 +46,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex flex-col min-h-96 min-w-96">
+  <div class="flex flex-col min-h-96 list">
     <h1 class="capitalize col-span-12 text-left mb-5 text-3xl font-bold text-gray-700">
       users list
     </h1>

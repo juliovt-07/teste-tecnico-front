@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
-import UsersList from '../UsersList.vue'
+import List from '../List.vue'
 import MobileMenu from '../MobileMenu.vue'
 import CreateUser from '../../views/CreateUser.vue'
 
@@ -14,7 +14,7 @@ describe('MobileMenu', () => {
 
 describe('Users', () => {
   it('fetch users', async () => {
-    const wrapper = mount(UsersList)
+    const wrapper = mount(List)
     setTimeout(() => {
       expect(wrapper.findAll('[data-test="users"]')).toHaveLength(1)
     }, 5000)
