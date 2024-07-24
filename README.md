@@ -1,60 +1,35 @@
-# Teste técnico para desenvolvedor(a) frond-end (Vue js)
+## O Teste
 
-## Instruções do teste
+Tive uma facilidade com a criação do projeto e início, focando primeiro na estrutura base como a estilização com Tailwind, a criação do Services para adicionar todos os endpoints da API, e os componentes base como o VCard focando na responsividade mobile first.
+Após ter boa parte feita da listagem tive algumas muitas dúvidas sobre a API Reqres pois imaginei que seria dinâmica para uso, vendo as adições de usuário e exclusão, porém a requisição é feita e verificada nas 3 partes do CRUD (faltou o Update).
+Adicionei teste unitários, algo que não tenho tanta experiência mas não acho difícil, percebi que precisaria usar o Vuex de controle de estado para ativar um Modal no App principal através de outro componente distante.
 
-Você deverá criar um `fork` deste projeto, e desenvolver em cima do seu fork. Utilize o README principal do seu repositório para descrever como foi resolver o teste, as decisões que você tomou, como organizou e estruturou seu código, e, especialmente, para fornecer as instruções de execução do projeto. Lembre-se de que o primeiro a rodar seu projeto será um programador backend da nossa equipe. Se você conseguir explicar claramente para ele como fazer isso, já estará começando com o pé direito!
+Obs: para visualização prévia, foi feito o deploy no Vercel:
+[link](https://teste-tecnico-front-livid.vercel.app)
 
-Acreditamos que este desafio pode ser resolvido em cerca de 40 horas de codificação (5 dias corridos).
+# Como rodar o projeto?
 
-## O desafio
+## Após clonar o repositório, entre na pasta /Vue
 
-Você irá construir uma mini-aplicação para controle de usuários. A aplicação deverá permitir a criação, edição, exclusão e busca de usuários. Além disso, esperamos que você torne o CRUD mais robusto, contendo:
-- Autenticação
-- Validação nos formulários
-- Paginação
-- Filtro de busca
+```sh
+cd Vue
+```
 
-Utilize a api **https://reqres.in/** para consumir os endpoints necessários.
+## Agora instale as dependências
 
-Por fim, precisamos apresentar essas informações de forma intuitiva e dinâmica para o usuário. Esperamos que você desenvolva um dashboard contendo alguns indicadores e gráficos (fique livre para escolher as informações que serão usadas no dash)
+```sh
+npm install
+```
 
-#### Observações
-- É interessante o código ter tratamento de erros e feedbacks visuais para o usuário.
-- Para os gráficos recomendamos que utilize o apex charts, porém sinta-se livre para usar outra lib de sua escolha
+## Caso queira verificar se os componentes principais estão renderizando antes de testar, apenas rode isso
 
-## O que nós esperamos do seu teste
-- Ver na solução a utilização do Vue Js na versão 3
-- Ver a utilização de dependency managers (npm, webpack)
-- Um HTML escrito da maneira mais semântica possível (HTML5/5.1)
-- Um código bem escrito (Modularização, Nomenclaturas, Padronização, Reutilização, etc)
-- Mobile first e layout responsivo
-- Testes unitários
+```sh
+npm run test:unit
+```
 
-### O que nos impressionaria
-- Alguma metodologia para definição e organização do seu código CSS/Tailwind
-- Testes de aceitação
-- Aplicação de animações em css quando possível e tome cuidado com a performance
-- Ver o código rodando live (Heroku, Firebase Hosting, Bucket estático S3, etc )
+## Por fim, rode o projeto
 
-### O que nós não gostaríamos
+```sh
+npm run dev
+```
 
-- Descobrir que não foi você quem fez seu teste
-- Ver commits grandes, sem muita explicação nas mensagens
-- Não conseguir rodar o projeto localmente (lembre-se de detalhar o passo-a-passo para a configuração do mesmo)
-
-## O que avaliaremos de seu teste
-
-- Histórico de commits do git
-- As instruções de como rodar o projeto
-- Organização, semântica, estrutura, legibilidade, manutenibilidade do seu código
-- Alcance dos objetivos propostos
-- Adaptação mobile (layout responsivo)
-- Componentização e extensibilidade dos componentes Javascript
-
-## Processo de submissão
-
-Ao finalizar, responda o email que lhe foi enviado contendo o link do seu repositório
-
-Qualquer dúvida em relação ao desafio, responderemos por e-mail.
-
-Bom trabalho!
