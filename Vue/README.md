@@ -5,7 +5,7 @@ Após ter boa parte feita da listagem tive algumas muitas dúvidas sobre a API R
 Adicionei teste unitários, algo que não tenho tanta experiência mas não acho difícil, percebi que precisaria usar o Vuex de controle de estado para ativar um Modal no App principal através de outro componente distante.
 
 Obs: para visualização prévia, foi feito o deploy no Vercel:
-[text](https://teste-tecnico-front-livid.vercel.app)
+[link](https://teste-tecnico-front-livid.vercel.app)
 
 # Como rodar o projeto?
 
