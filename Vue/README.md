@@ -1,41 +1,26 @@
-# Vue
+## O Teste
 
-This template should help get you started developing with Vue 3 in Vite.
+Tive uma facilidade com a criação do projeto e início, focando primeiro na estrutura base como a estilização com Tailwind, a criação do Services para adicionar todos os endpoints da API, e os componentes base como o VCard focando na responsividade mobile first.
+Após ter boa parte feita da listagem tive algumas muitas dúvidas sobre a API Reqres pois imaginei que seria dinâmica para uso, vendo as adições de usuário e exclusão, porém a requisição é feita e verificada nas 3 partes do CRUD (faltou o Update).
+Adicionei teste unitários, algo que não tenho tanta experiência mas não acho difícil, percebi que precisaria usar o Vuex de controle de estado para ativar um Modal no App principal através de outro componente distante.
 
-## Recommended IDE Setup
+# Como rodar o projeto?
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Após clonar o repositório, Instale as dependências
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Caso queira verificar se os componentes principais estão renderizando antes de testar, apenas rode isso
 
 ```sh
 npm run test:unit
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Por fim, rode o projeto
 
 ```sh
-npm run lint
+npm run dev
 ```
+
