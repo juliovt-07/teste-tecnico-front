@@ -6,7 +6,13 @@ Adicionei teste unitários, algo que não tenho tanta experiência mas não acho
 
 # Como rodar o projeto?
 
-## Após clonar o repositório, Instale as dependências
+## Após clonar o repositório, entre na pasta /Vue
+
+```sh
+cd Vue
+```
+
+## Agora instale as dependências
 
 ```sh
 npm install
