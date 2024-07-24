@@ -4,6 +4,9 @@ Tive uma facilidade com a criação do projeto e início, focando primeiro na es
 Após ter boa parte feita da listagem tive algumas muitas dúvidas sobre a API Reqres pois imaginei que seria dinâmica para uso, vendo as adições de usuário e exclusão, porém a requisição é feita e verificada nas 3 partes do CRUD (faltou o Update).
 Adicionei teste unitários, algo que não tenho tanta experiência mas não acho difícil, percebi que precisaria usar o Vuex de controle de estado para ativar um Modal no App principal através de outro componente distante.
 
+Obs: para visualização prévia, foi feito o deploy no Vercel:
+[text](https://teste-tecnico-front-livid.vercel.app)
+
 # Como rodar o projeto?
 
 ## Após clonar o repositório, entre na pasta /Vue
