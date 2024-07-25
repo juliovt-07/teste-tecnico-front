@@ -3,6 +3,8 @@ import { ref, computed } from 'vue'
 import VCard from '@/components/VCard.vue'
 import reqresService from '@/services/reqresService'
 import VButton from '@/components/VButton.vue'
+import TextInput from '@/components/TextInput.vue'
+import EmailInput from '@/components/EmailInput.vue'
 
 const loading = ref(false)
 const user = ref('')
@@ -139,43 +141,25 @@ const closeErrorCard = () => {
     </div>
     <div v-else>
       <form data-test="form" @submit.prevent="submitForm" class="text-gray-600">
-        <div class="sm:col-span-3">
-          <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
-          <div class="mt-2">
-            <span class="error" v-if="errors.name && !isNameValid">{{ errors.name }}</span>
-            <input
-              type="text"
-              data-test="new-user-name"
-              v-model="form.name.value"
-              @blur="validateField('name')"
-              name="name"
-              id="name"
-              autocomplete="name"
-              class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset placeholder:text-gray-400 outline-none focus:ring-gray-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
+        <TextInput
+          id="name"
+          name="name"
+          label="Name"
+          v-model="form.name.value"
+          :error="errors.name"
+          :validate="() => validateField('name')"
+          placeholder="Name"
+        />
 
-        <div class="sm:col-span-4 mt-6">
-          <label for="email" class="block text-sm font-medium leading-6 text-gray-900"
-            >Email address</label
-          >
-          <div class="mt-2">
-            <span class="error" v-if="errors.email && !isEmailValid">{{ errors.email }}</span>
-            <input
-              id="email"
-              data-test="new-user-job"
-              v-model="form.email.value"
-              @blur="validateField('email')"
-              name="email"
-              type="email"
-              autocomplete="email"
-              class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset placeholder:text-gray-400 outline-none focus:ring-gray-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
+        <EmailInput
+          v-model="form.email.value"
+          :error="errors.email"
+          :validate="() => validateField('email')"
+        />
       </form>
-      <VButton class="mt-8" @click="submitForm" :disabled="loading">Criar Usuário</VButton>
+      <VButton class="mt-8" @click="submitForm" :disabled="loading"
+        >Criar Usuário</VButton
+      >
     </div>
     <span hidden data-test="user">{{ user }}</span>
   </VCard>

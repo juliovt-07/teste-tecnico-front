@@ -1,17 +1,6 @@
-<template>
-    <button
-      :type="type"
-      :class="buttonClass"
-      :disabled="disabled"
-      @click="handleClick"
-    >
-      <slot></slot>
-    </button>
-  </template>
-  
   <script setup>
   import { computed } from 'vue'
-  
+
   const props = defineProps({
     type: {
       type: String,
@@ -26,10 +15,10 @@
       default: 'default', // 'default' | 'primary' | 'secondary'
     },
   })
-  
+
   const buttonClass = computed(() => {
     let baseClasses = 'flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm'
-    
+
     if (props.disabled) {
       baseClasses += ' bg-gray-400 text-gray-600 cursor-not-allowed'
     } else {
@@ -45,14 +34,19 @@
           break
       }
     }
-    
+
     return baseClasses
   })
-  
+
   const handleClick = (event) => {
     if (props.disabled) {
       event.preventDefault()
     }
   }
-  </script>
+</script>
   
+  <template>
+    <button :type="type" :class="buttonClass" :disabled="disabled" @click="handleClick">
+      <slot></slot>
+    </button>
+  </template>
