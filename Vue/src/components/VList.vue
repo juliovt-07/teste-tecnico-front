@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
-import apiService from '@/services/apiService'
+import reqresService from '@/services/reqresService'
 import PaginationUsers from '@/components/PaginationUsers.vue'
 
 const store = useStore();
@@ -25,7 +25,7 @@ const openModal = (data) => {
 const fetchUsers = async (page) => {
   loading.value = true
   users.value = ref([])
-  await apiService
+  await reqresService
     .getUsers(page)
     .then((response) => {
       totalUsers.value = response.data.total

@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
-import apiService from '@/services/apiService'
+import reqresService from '@/services/reqresService'
 
 const store = useStore()
 
@@ -9,7 +9,7 @@ const isModalOpen = computed(() => store.getters.isModalOpen)
 const modalData = computed(() => store.getters.modalData)
 
 const deleteUser = async () => {
-  await apiService
+  await reqresService
     .deleteUser(modalData)
     .then(() => {
       console.log('Usuário deletado!')

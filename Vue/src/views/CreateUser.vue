@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import VCard from '@/components/VCard.vue'
-import apiService from '@/services/apiService'
+import reqresService from '@/services/reqresService'
 
 const loading = ref(false)
 const user = ref('')
@@ -43,7 +43,7 @@ const submitForm = () => {
 
 const createUser = async (data) => {
   loading.value = true
-  await apiService
+  await reqresService
     .createUser(data)
     .then((response) => {
       user.value = response.data.data
