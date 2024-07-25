@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, watchEffect } from 'vue'
+import { ref, defineProps } from 'vue'
 
 const props = defineProps({
   moedas: {
@@ -7,7 +7,20 @@ const props = defineProps({
   }
 })
 
-const series = ref([])
+const moedas = props.moedas
+
+const series = ref([
+  {
+    name: 'High',
+    type: 'column',
+    data: props.moedas.map(m => m.high)
+  },
+  {
+    name: 'Low',
+    type: 'column',
+    data: props.moedas.map(m => m.low)
+  }
+])
 
 const chartOptions = ref({
   chart: {
@@ -22,9 +35,8 @@ const chartOptions = ref({
     width: [1, 1]
   },
   xaxis: {
-    categories: [0, 0, 0, 0]
-    // categories: props.moedas.value.map((item, index) => `Data ${index + 1}`)
-  },
+    categories: moedas.map((item, index) => `Day ${index + 1}`) 
+   },
   yaxis: [
     {
       seriesName: 'High',
@@ -87,44 +99,10 @@ const chartOptions = ref({
   }
 })
 
-const updateChart = () => {
-  if (!props.moedas || props.moedas.length === 0) {
-    return
-  }
-
-//   const categories = props.moedas.map((item, index) => `Data ${index + 1}`)
-//   const highData = props.moedas.map((item) => parseFloat(item.high))
-//   const lowData = props.moedas.map((item) => parseFloat(item.low))
-
-//   chartOptions.value.xaxis.categories = categories
-  series.value = [
-    {
-      name: 'High',
-      type: 'column',
-      data: [3, 3, 9, 1]
-    },
-    {
-      name: 'Low',
-      type: 'column',
-      data: [6, 4, 5, 2]
-    }
-  ]
-}
-
-// Use watchEffect instead of watch to ensure it runs immediately with the initial value
-watchEffect(() => {
-  updateChart()
-})
 </script>
 
 <template>
   <div class="flex flex-col items-center">
-    <apexchart
-      type="line"
-      height="300"
-      width="400"
-      :options="chartOptions"
-      :series="series"
-    ></apexchart>
+    <apexchart type="line" height="300" width="400" :options="chartOptions" :series="series"></apexchart>
   </div>
 </template>

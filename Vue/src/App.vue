@@ -18,7 +18,7 @@ const toggleSidebar = () => {
       <MobileMenu @toggle-sidebar="toggleSidebar" />
     </header>
     <SideBar :isVisible="isSidebarVisible" />
-    <div class="md:w-full mt-10 md:mt-0 z-20 md:pr-10 py-10">
+    <div class="md:w-full mt-0 md:mt-0 z-20 md:pr-10 py-10">
       <RouterView />
     </div>
   </div>

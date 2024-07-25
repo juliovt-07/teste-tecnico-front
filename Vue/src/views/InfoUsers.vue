@@ -1,14 +1,16 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, defineAsyncComponent } from 'vue'
 import VCard from '@/components/VCard.vue'
 import BarChart from '@/components/BarChart.vue'
-import MixedChart from '@/components/MixedChart.vue'
-import economiaService from '@/services/economiaService'
+import MixedChart from '@/components/MixedChart.vue';
+import economiaService from '@/services/economiaService';
+import LoadingCard from '@/components/LoadingCard.vue';
 
 const moedas = ref([])
+const loading = ref(false)
 
 const fetchMoedas = async () => {
-  // loading.value = true
+  loading.value = true
   moedas.value = ref([])
   await economiaService
     .getLastDays(4)
@@ -18,12 +20,15 @@ const fetchMoedas = async () => {
     .catch((error) => {
       console.error('Erro ao buscar moedas:', error)
     })
-  // loading.value = false
+
+  loading.value = false
 }
 
-onMounted(async () => {
+const Chart = defineAsyncComponent(async () => {
   await fetchMoedas()
-})
+  return MixedChart
+});
+
 </script>
 
 <template>
@@ -32,7 +37,8 @@ onMounted(async () => {
       info users
     </h1>
     <div class="flex flex-col items-center">
-      <MixedChart :moedas="moedas"/>
+      <LoadingCard v-if="loading" />
+      <Chart :moedas="moedas"/>
       <BarChart />
     </div>
   </VCard>
