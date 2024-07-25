@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import VCard from '@/components/VCard.vue'
 import reqresService from '@/services/reqresService'
+import VButton from '@/components/VButton.vue'
 
 const loading = ref(false)
 const user = ref('')
@@ -174,13 +175,7 @@ const closeErrorCard = () => {
           </div>
         </div>
       </form>
-      <button
-        @click="submitForm"
-        class="btn flex flex-col items-center mt-8 w-36 text-gray-500 cursor-pointer"
-        :disabled="loading"
-      >
-        Criar
-      </button>
+      <VButton class="mt-8" @click="submitForm" :disabled="loading">Criar Usuário</VButton>
     </div>
     <span hidden data-test="user">{{ user }}</span>
   </VCard>
